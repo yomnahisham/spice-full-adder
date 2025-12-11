@@ -1,0 +1,27 @@
+* 		Level-1 Model for PMOS in model 0.18um CMOS Technology
+.model PMOS0P18	PMOS(Level=1 VTO=-0.5 GAMMA=0.3 PHI=0.8
++		LD=10E-09 WD=0 UO=100 LAMBDA=0.17 TOX=4.08E-9 PB=0.9 CJ=1E-3
++		CJSW=2.04E-10 MJ=0.45 MJSW=0.29 CGDO=3.43E-10 JS=4.0E-7 CGBO=3.5E-10
++		CGSO=3.43E-10)
+
+
+* 		Level-1 Model for NMOS in model 0.18um CMOS Technology
+.model NMOS0P18	NMOS(Level=1 VTO=0.5 GAMMA=0.3 PHI=0.84
++		LD=10E-09 WD=0 UO=450 LAMBDA=0.2 TOX=4.08E-9 PB=0.9 CJ=1.6E-3
++		CJSW=2.04E-10 MJ=0.5 MJSW=0.2 CGDO=3.67E-10 JS=8.38E-6 CGBO=3.8E-10
++		CGSO=3.67E-10)
+
+VDD p_s 0 1.8
+Vin g 0 pulse (0 1.8 1p 1p 5n)
+.tran 0.2n 10n
+
+.meas tran tPHL TRIG V(load) VAL=1.8 FALL=1 TARG V(load) VAL=0.9 FALL=1
+.meas tran tpLH TRIG V(load) VAL=0 RISE=1 TARG V(load) VAL=0.9 RISE=1
+
+MP out g p_s p_s PMOS0P18 w=0.9u l=0.18u
+MN out g 0 0 NMOS0P18 w=0.9u l=0.18u
+
+RL out load 1k
+CL load 0 0.1p
+
+.end
