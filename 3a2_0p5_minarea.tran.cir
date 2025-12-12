@@ -1,0 +1,21 @@
+
+.include ./MOSFET_models_0p5_0p18-3.inc
+
+VDD p_s 0 DC 3.3
+Vin g 0 pulse(0 3.3 1p 1p 5n)
+
+Rld m load 1k
+
+Cld load 0 0.5p
+
+* Minimum-area PMOS; NMOS W = 1.25u
+MP m g p_s p_s PMOS0P5 w=0.2u l=0.5u
+MN m g 0 0 NMOS0P5 w=1.25u l=0.5u
+
+.tran 10n
+
+.meas tran tPHL TRIG V(g) VAL=1.65 RISE=1 TARG V(load) VAL=1.65 FALL=1
+.meas tran tPLH TRIG V(g) VAL=1.65 FALL=1 TARG V(load) VAL=1.65 RISE=1
+
+.end
+
