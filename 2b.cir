@@ -12,7 +12,7 @@
 +		CGSO=3.67E-10)
 
 VDD p_s 0 DC 1.8
-Vin g 0 pulse(0 1.8 1p 1p 5n)
+Vin g 0 PULSE(0 1.8 0 1p 1p 2.5n 5n)
 
 Rld m load 1k
 
@@ -21,7 +21,7 @@ Cld load 0 0.2p
 MP m g p_s p_s PMOS0P18 w=0.9u l=0.18u
 MN m g 0 0 NMOS0P18 w=0.9u l=0.18u
 
-.tran 10n
+.tran 5n
 
 .meas tran tPHL TRIG V(g) VAL=0.9 RISE=1 TARG V(load) VAL=0.9 FALL=1
 .meas tran tPLH TRIG V(g) VAL=0.9 FALL=1 TARG V(load) VAL=0.9 RISE=1
