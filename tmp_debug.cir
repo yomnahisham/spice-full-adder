@@ -1,0 +1,25 @@
+
+.include ./MOSFET_models_0p5_0p18-3.inc
+.include ./subcircuits.cir
+
+VDD p_s 0 DC 1.8
+VA A 0 DC 0
+VB B 0 DC 0
+VCi Ci 0 DC 0
+
+XX1 p_s A B x1 0 XNOR Wn=0.143u Wp=0.286u
+XI1 p_s x1 x1_inv 0 INVERTER Wn=0.226u Wp=0.452u
+XX2 p_s x1_inv Ci x2 0 XNOR Wn=0.357u Wp=0.714u
+XI2 p_s x2 S 0 INVERTER Wn=0.567u Wp=1.134u
+XI3 p_s x2_inv S 0 INVERTER Wn=0.9u Wp=1.8u
+
+XNA1 p_s A B nab 0 NAND Wn=0.226u Wp=0.452u
+XIA1 p_s nab ab 0 INVERTER Wn=0.357u Wp=0.714u
+XNA2 p_s x1_inv Ci ncix 0 NAND Wn=0.226u Wp=0.452u
+XIA2 p_s ncix cix 0 INVERTER Wn=0.357u Wp=0.714u
+XNO p_s ab cix nor_out 0 NOR Wn=0.567u Wp=1.134u
+XIO p_s nor_out Co 0 INVERTER Wn=0.9u Wp=1.8u
+
+.op
+.print dc V(A) V(B) V(Ci)
+.end

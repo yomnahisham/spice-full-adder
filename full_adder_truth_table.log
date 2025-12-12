@@ -1,0 +1,19 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: *include ./MOSFET_models_0p5_0p18-3.inc
+
+Warning: Model issue on line 23 :
+  .model pmos0p18 pmos(level=1 vto=-0.5 gamma=0.3 phi=0.8 ld=10e-09 wd=0 u ...
+unrecognized parameter (wd) - ignored
+
+Warning: Model issue on line 30 :
+  .model nmos0p18 nmos(level=1 vto=0.5 gamma=0.3 phi=0.84 ld=10e-09 wd=0 u ...
+unrecognized parameter (wd) - ignored
+
+Error on line 34 or its substitute:
+  .step param a list 0 1
+ unimplemented dot command '.step'
+    Simulation interrupted due to error!
+

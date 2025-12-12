@@ -1,0 +1,579 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: *include ./MOSFET_models_0p5_0p18-3.inc
+
+Warning: Model issue on line 23 :
+  .model pmos0p18 pmos(level=1 vto=-0.5 gamma=0.3 phi=0.8 ld=10e-09 wd=0 u ...
+unrecognized parameter (wd) - ignored
+
+Warning: Model issue on line 30 :
+  .model nmos0p18 nmos(level=1 vto=0.5 gamma=0.3 phi=0.84 ld=10e-09 wd=0 u ...
+unrecognized parameter (wd) - ignored
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+No. of Data Rows : 1
+	Node                                  Voltage
+	----                                  -------
+	----	-------
+	co                               1.800000e+00
+	nor_out                          7.465887e-10
+	xno.wire_1                       5.000496e-01
+	cix                              1.638400e-09
+	xna2.wire                        9.000000e-01
+	ncix                             1.800000e+00
+	ab                               1.800000e+00
+	xna1.wire                        1.109500e-01
+	nab                              2.684611e-01
+	s                                6.498987e-10
+	x2_inv                           1.800000e+00
+	xx2.wire_3                       1.736561e-02
+	xx2.wire_2                       3.299503e-02
+	x2                               6.599006e-02
+	xx2.wire_1                       1.780022e+00
+	xx2.b_n                          5.425815e-02
+	xx2.a_n                          1.800000e+00
+	x1_inv                           2.588092e-09
+	xx1.wire_3                       9.000000e-01
+	xx1.wire_2                       1.063471e-08
+	x1                               1.800000e+00
+	xx1.wire_1                       1.800000e+00
+	xx1.b_n                          5.425816e-02
+	xx1.a_n                          5.425816e-02
+	ci                               1.000000e+00
+	b                                1.000000e+00
+	a                                1.000000e+00
+	p_s                              1.800000e+00
+
+	Source	Current
+	------	-------
+
+	vdd#branch                       -8.59404e-05
+	va#branch                        0.000000e+00
+	vb#branch                        0.000000e+00
+	vci#branch                       0.000000e+00
+
+ Mos1 models (Level 1 MOSfet model with Meyer capacitance model)
+      model              nmos0p18              pmos0p18
+
+       type                  nmos                  pmos
+        vto                   0.5                  -0.5
+         kp           0.000380861           8.46359e-05
+      gamma                   0.3                   0.3
+        phi                  0.84                   0.8
+     lambda                   0.2                  0.17
+         rd                     0                     0
+         rs                     0                     0
+        cbd                     0                     0
+        cbs                     0                     0
+         is                 1e-14                 1e-14
+         pb                   0.9                   0.9
+       cgso              3.67e-10              3.43e-10
+       cgdo              3.67e-10              3.43e-10
+       cgbo               3.8e-10               3.5e-10
+        rsh                     0                     0
+         cj                0.0016                 0.001
+         mj                   0.5                  0.45
+       cjsw              2.04e-10              2.04e-10
+       mjsw                   0.2                  0.29
+         js              8.38e-06                 4e-07
+        tox              4.08e-09              4.08e-09
+         ld                 1e-08                 1e-08
+         u0                   450                   100
+         fc                   0.5                   0.5
+       nsub                     0                     0
+        tpg                     0                     0
+        nss                     0                     0
+       tnom                    27                    27
+         kf                     0                     0
+         af                     1                     1
+       nlev                     2                     2
+     gdsnoi                     1                     1
+
+ Mos1: Level 1 MOSfet model with Meyer capacitance model
+     device              m.xio.mn             m.xno.mn2             m.xno.mn1
+      model              nmos0p18              nmos0p18              nmos0p18
+         id              1.81e-12           1.03524e-21           1.30995e-12
+         is                     0                     0          -1.30995e-12
+         ig                     0                     0                     0
+         ib             -1.81e-12          -1.03524e-21          -1.03524e-21
+        vgs           7.46589e-10            1.6384e-09                   1.8
+        vds                   1.8           7.46589e-10           7.46589e-10
+        vbs                     0                     0                     0
+        von                   0.5                   0.5                   0.5
+      vdsat                     0                     0                   1.3
+         rs                     0                     0                     0
+         rd                     0                     0                     0
+         gm                     0                     0           1.00765e-12
+        gds                     0                     0            0.00175458
+        gmb                     0                     0           1.64916e-13
+        cbd                     0                     0                     0
+        cbs                     0                     0                     0
+        cgs             3.303e-16           2.08089e-16           5.91997e-16
+        cgd             3.303e-16           2.08089e-16           5.91997e-16
+        cgb            7.8625e-16           5.17834e-16              6.08e-17
+       cbd0                     0                     0                     0
+     cbdsw0                     0                     0                     0
+       cbs0                     0                     0                     0
+     cbssw0                     0                     0                     0
+
+ Mos1: Level 1 MOSfet model with Meyer capacitance model
+     device             m.xia2.mn            m.xna2.mn2            m.xna2.mn1
+      model              nmos0p18              nmos0p18              nmos0p18
+         id              1.81e-12               9.1e-13               9.1e-13
+         is             -1.81e-12                     0                     0
+         ig                     0                     0                     0
+         ib          -2.27185e-21              -9.1e-13              -9.1e-13
+        vgs                   1.8           2.58809e-09                   0.1
+        vds            1.6384e-09                   0.9                   0.9
+        vbs                     0                     0                     0
+        von                   0.5                   0.5                   0.5
+      vdsat                   1.3                     0                     0
+         rs                     0                     0                     0
+         rd                     0                     0                     0
+         gm           1.39231e-12                     0                     0
+        gds            0.00110474                     0                     0
+        gmb            2.2787e-13                     0                     0
+        cbd                     0                     0                     0
+        cbs                     0                     0                     0
+        cgs           3.72739e-16            8.2942e-17           9.26577e-17
+        cgd           3.72739e-16            8.2942e-17            8.2942e-17
+        cgb              6.08e-17           2.42969e-16           2.06535e-16
+       cbd0                     0                     0                     0
+     cbdsw0                     0                     0                     0
+       cbs0                     0                     0                     0
+     cbssw0                     0                     0                     0
+
+ Mos1: Level 1 MOSfet model with Meyer capacitance model
+     device             m.xia1.mn            m.xna1.mn2            m.xna1.mn1
+      model              nmos0p18              nmos0p18              nmos0p18
+         id              1.81e-12           2.71213e-05           2.71213e-05
+         is                     0          -2.71213e-05          -2.71213e-05
+         ig                     0                     0                     0
+         ib             -1.81e-12           -1.2095e-13          -1.67511e-13
+        vgs              0.268461                     1               0.88905
+        vds                   1.8               0.11095              0.157511
+        vbs                     0                     0                     0
+        von                   0.5                   0.5                   0.5
+      vdsat                     0                   0.5               0.38905
+         rs                     0                     0                     0
+         rd                     0                     0                     0
+         gm                     0           6.10119e-05           8.74051e-05
+        gds                     0           0.000219247           0.000133743
+        gmb                     0           9.98541e-06            1.4305e-05
+        cbd                     0                     0                     0
+        cbs                     0                     0                     0
+        cgs           2.75637e-16             2.479e-16            2.5857e-16
+        cgd           1.31019e-16           2.22438e-16           2.06786e-16
+        cgb           1.94056e-16              6.08e-17              6.08e-17
+       cbd0                     0                     0                     0
+     cbdsw0                     0                     0                     0
+       cbs0                     0                     0                     0
+     cbssw0                     0                     0                     0
+
+ Mos1: Level 1 MOSfet model with Meyer capacitance model
+     device              m.xi3.mn              m.xi2.mn             m.xx2.mn4
+      model              nmos0p18              nmos0p18              nmos0p18
+         id              1.81e-12              1.81e-12           1.91225e-05
+         is             -1.81e-12                     0          -1.91225e-05
+         ig                     0                     0                     0
+         ib          -9.01165e-22             -1.81e-12          -2.22557e-14
+        vgs                   1.8             0.0659901                   1.8
+        vds           6.49899e-10                   1.8             0.0173656
+        vbs                     0                     0                     0
+        von                   0.5                   0.5                   0.5
+      vdsat                   1.3                     0                   1.3
+         rs                     0                     0                     0
+         rd                     0                     0                     0
+         gm           1.39231e-12                     0           1.48085e-05
+        gds            0.00278505                     0            0.00109758
+        gmb            2.2787e-13                     0           2.42361e-06
+        cbd                     0                     0                     0
+        cbs                     0                     0                     0
+        cgs           9.39678e-16           2.08089e-16           3.73819e-16
+        cgd           9.39678e-16           2.08089e-16           3.71652e-16
+        cgb              6.08e-17           4.57514e-16              6.08e-17
+       cbd0                     0                     0                     0
+     cbdsw0                     0                     0                     0
+       cbs0                     0                     0                     0
+     cbssw0                     0                     0                     0
+
+ Mos1: Level 1 MOSfet model with Meyer capacitance model
+     device             m.xx2.mn3             m.xx2.mn2             m.xx2.mn1
+      model              nmos0p18              nmos0p18              nmos0p18
+         id           1.91225e-05           4.02026e-14           4.02026e-14
+         is          -1.91225e-05                     0                     0
+         ig                     0                     0                     0
+         ib          -5.70985e-14          -4.02026e-14          -4.02026e-14
+        vgs              0.982634           2.58809e-09             0.0212631
+        vds             0.0486245              0.032995              0.032995
+        vbs                     0                     0                     0
+        von                   0.5                   0.5                   0.5
+      vdsat              0.482634                     0                     0
+         rs                     0                     0                     0
+         rd                     0                     0                     0
+         gm           4.17228e-05                     0                     0
+        gds           0.000376195                     0                     0
+        gmb           6.82849e-06                     0                     0
+        cbd                     0                     0                     0
+        cbs                     0                     0                     0
+        cgs           3.81061e-16           1.31019e-16           1.31019e-16
+        cgd           3.63964e-16           1.31019e-16           1.31019e-16
+        cgb              6.08e-17           3.48562e-16           3.36325e-16
+       cbd0                     0                     0                     0
+     cbdsw0                     0                     0                     0
+       cbs0                     0                     0                     0
+     cbssw0                     0                     0                     0
+
+ Mos1: Level 1 MOSfet model with Meyer capacitance model
+     device   m.xx2.xinverter2.mn   m.xx2.xinverter1.mn              m.xi1.mn
+      model              nmos0p18              nmos0p18              nmos0p18
+         id           2.20399e-05              1.81e-12              1.81e-12
+         is          -2.20399e-05                     0             -1.81e-12
+         ig                     0                     0                     0
+         ib          -6.30308e-14             -1.81e-12          -3.58871e-21
+        vgs                     1           2.58809e-09                   1.8
+        vds             0.0542582                   1.8           2.58809e-09
+        vbs                     0                     0                     0
+        von                   0.5                   0.5                   0.5
+      vdsat                   0.5                     0                   1.3
+         rs                     0                     0                     0
+         rd                     0                     0                     0
+         gm           4.66088e-05                     0           1.39231e-12
+        gds           0.000387261                     0           0.000699357
+        gmb           7.62815e-06                     0            2.2787e-13
+        cbd                     0                     0                     0
+        cbs                     0                     0                     0
+        cgs           3.81719e-16           1.31019e-16           2.35964e-16
+        cgd           3.63229e-16           1.31019e-16           2.35964e-16
+        cgb              6.08e-17           3.48562e-16              6.08e-17
+       cbd0                     0                     0                     0
+     cbdsw0                     0                     0                     0
+       cbs0                     0                     0                     0
+     cbssw0                     0                     0                     0
+
+ Mos1: Level 1 MOSfet model with Meyer capacitance model
+     device             m.xx1.mn4             m.xx1.mn3             m.xx1.mn2
+      model              nmos0p18              nmos0p18              nmos0p18
+         id               9.1e-13               9.1e-13              1.81e-12
+         is                     0                     0             -1.81e-12
+         ig                     0                     0                     0
+         ib              -9.1e-13              -9.1e-13          -1.47463e-20
+        vgs             0.0542582                   0.1                     1
+        vds                   0.9                   0.9           1.06347e-08
+        vbs                     0                     0                     0
+        von                   0.5                   0.5                   0.5
+      vdsat                     0                     0                   0.5
+         rs                     0                     0                     0
+         rd                     0                     0                     0
+         gm                     0                     0              3.62e-12
+        gds                     0                     0           0.000170197
+        gmb                     0                     0           5.92462e-13
+        cbd                     0                     0                     0
+        cbs                     0                     0                     0
+        cgs            5.2481e-17           5.86285e-17           1.49304e-16
+        cgd            5.2481e-17            5.2481e-17           1.49304e-16
+        cgb           1.63558e-16           1.53013e-16              6.08e-17
+       cbd0                     0                     0                     0
+     cbdsw0                     0                     0                     0
+       cbs0                     0                     0                     0
+     cbssw0                     0                     0                     0
+
+ Mos1: Level 1 MOSfet model with Meyer capacitance model
+     device             m.xx1.mn1   m.xx1.xinverter2.mn   m.xx1.xinverter1.mn
+      model              nmos0p18              nmos0p18              nmos0p18
+         id              1.81e-12           8.82832e-06           8.82832e-06
+         is                     0          -8.82832e-06          -8.82832e-06
+         ig                     0                     0                     0
+         ib             -1.81e-12          -6.30308e-14          -6.30308e-14
+        vgs             0.0542581                     1                     1
+        vds                   1.8             0.0542582             0.0542582
+        vbs                     0                     0                     0
+        von                   0.5                   0.5                   0.5
+      vdsat                     0                   0.5                   0.5
+         rs                     0                     0                     0
+         rd                     0                     0                     0
+         gm                     0           1.86696e-05           1.86696e-05
+        gds                     0           0.000155121           0.000155121
+        gmb                     0           3.05553e-06           3.05553e-06
+        cbd                     0                     0                     0
+        cbs                     0                     0                     0
+        cgs            5.2481e-17           1.52901e-16           1.52901e-16
+        cgd            5.2481e-17           1.45495e-16           1.45495e-16
+        cgb           1.63558e-16              6.08e-17              6.08e-17
+       cbd0                     0                     0                     0
+     cbdsw0                     0                     0                     0
+       cbs0                     0                     0                     0
+     cbssw0                     0                     0                     0
+
+ Mos1: Level 1 MOSfet model with Meyer capacitance model
+     device              m.xio.mp             m.xno.mp2             m.xno.mp1
+      model              pmos0p18              pmos0p18              pmos0p18
+         id              1.81e-12           1.30995e-12           1.30995e-12
+         is             -1.81e-12          -7.99901e-13                     0
+         ig                     0                     0                     0
+         ib          -2.02762e-21           -5.1005e-13          -1.30995e-12
+        vgs                   1.8               0.50005            4.6458e-09
+        vds           1.46227e-09               0.50005               1.29995
+        vbs                    -0                    -0                    -0
+        von                  -0.5                  -0.5                  -0.5
+      vdsat                  -1.3          -4.95784e-05                    -0
+         rs                     0                     0                     0
+         rd                     0                     0                     0
+         gm           1.39231e-12           3.22681e-08                     0
+        gds             0.0012378           1.25329e-13                     0
+        gmb           2.33497e-13           5.41153e-09                     0
+        cbd                     0                     0                     0
+        cbs                     0                     0                     0
+        cgs           1.83616e-15           1.41272e-15           3.88962e-16
+        cgd           1.83616e-15           3.88962e-16           3.88962e-16
+        cgb               5.6e-17               5.6e-17           1.01577e-15
+       cbd0                     0                     0                     0
+     cbdsw0                     0                     0                     0
+       cbs0                     0                     0                     0
+     cbssw0                     0                     0                     0
+
+ Mos1: Level 1 MOSfet model with Meyer capacitance model
+     device             m.xia2.mp            m.xna2.mp2            m.xna2.mp1
+      model              pmos0p18              pmos0p18              pmos0p18
+         id              1.81e-12           7.39375e-13           1.70625e-13
+         is                     0          -7.39375e-13          -1.70625e-13
+         ig                     0                     0                     0
+         ib             -1.81e-12          -3.29843e-21          -3.29843e-21
+        vgs           2.37875e-09                   1.8                   0.8
+        vds                   1.8           2.37875e-09           2.37875e-09
+        vbs                    -0                    -0                    -0
+        von                  -0.5                  -0.5                  -0.5
+      vdsat                    -0                  -1.3                  -0.3
+         rs                     0                     0                     0
+         rd                     0                     0                     0
+         gm                     0            5.6875e-13            5.6875e-13
+        gds                     0           0.000310825           7.17289e-05
+        gmb                     0           9.53823e-14           9.53823e-14
+        cbd                     0                     0                     0
+        cbs                     0                     0                     0
+        cgs           2.44902e-16           4.61079e-16           4.61079e-16
+        cgd           2.44902e-16           4.61079e-16           4.61079e-16
+        cgb             6.603e-16               5.6e-17               5.6e-17
+       cbd0                     0                     0                     0
+     cbdsw0                     0                     0                     0
+       cbs0                     0                     0                     0
+     cbssw0                     0                     0                     0
+
+ Mos1: Level 1 MOSfet model with Meyer capacitance model
+     device             m.xia1.mp            m.xna1.mp2            m.xna1.mp1
+      model              pmos0p18              pmos0p18              pmos0p18
+         id              1.81e-12           1.35607e-05           1.35607e-05
+         is             -1.81e-12          -1.35607e-05          -1.35607e-05
+         ig                     0                     0                     0
+         ib          -6.44197e-21          -1.54154e-12          -1.54154e-12
+        vgs               1.53154                   0.8                   0.8
+        vds            4.6458e-09               1.53154               1.53154
+        vbs                    -0                    -0                    -0
+        von                  -0.5                  -0.5                  -0.5
+      vdsat              -1.03154                  -0.3                  -0.3
+         rs                     0                     0                     0
+         rd                     0                     0                     0
+         gm           1.75466e-12           9.04044e-05           9.04044e-05
+        gds           0.000389599           1.82909e-06           1.82909e-06
+        gmb           2.94265e-13           1.51613e-05           1.51613e-05
+        cbd                     0                     0                     0
+        cbs                     0                     0                     0
+        cgs           7.28342e-16           5.63094e-16           5.63094e-16
+        cgd           7.28342e-16           1.55036e-16           1.55036e-16
+        cgb               5.6e-17               5.6e-17               5.6e-17
+       cbd0                     0                     0                     0
+     cbdsw0                     0                     0                     0
+       cbs0                     0                     0                     0
+     cbssw0                     0                     0                     0
+
+ Mos1: Level 1 MOSfet model with Meyer capacitance model
+     device              m.xi3.mp              m.xi2.mp             m.xx2.mp4
+      model              pmos0p18              pmos0p18              pmos0p18
+         id              1.81e-12              1.81e-12           1.72403e-12
+         is                     0             -1.81e-12                     0
+         ig                     0                     0                     0
+         ib             -1.81e-12          -3.39056e-21          -1.72403e-12
+        vgs           2.44519e-09               1.73401            -0.0199777
+        vds                   1.8           2.44519e-09               1.71403
+        vbs                    -0                    -0                    -0
+        von                  -0.5                  -0.5                  -0.5
+      vdsat                    -0              -1.23401                    -0
+         rs                     0                     0                     0
+         rd                     0                     0                     0
+         gm                     0           1.46676e-12                     0
+        gds                     0           0.000740229                     0
+        gmb                     0           2.45984e-13                     0
+        cbd                     0                     0                     0
+        cbs                     0                     0                     0
+        cgs             6.174e-16           1.15678e-15           2.44902e-16
+        cgd             6.174e-16           1.15678e-15           2.44902e-16
+        cgb           1.57945e-15               5.6e-17           6.84445e-16
+       cbd0                     0                     0                     0
+     cbdsw0                     0                     0                     0
+       cbs0                     0                     0                     0
+     cbssw0                     0                     0                     0
+
+ Mos1: Level 1 MOSfet model with Meyer capacitance model
+     device             m.xx2.mp3             m.xx2.mp2             m.xx2.mp1
+      model              pmos0p18              pmos0p18              pmos0p18
+         id           1.91225e-05           9.76663e-06           9.35584e-06
+         is          -1.91225e-05          -9.76663e-06          -9.35584e-06
+         ig                     0                     0                     0
+         ib          -1.72403e-12          -2.53586e-14          -2.53586e-14
+        vgs              0.780022                   1.8               1.74574
+        vds               1.71403             0.0199777             0.0199777
+        vbs                    -0                    -0                    -0
+        von                  -0.5                  -0.5                  -0.5
+      vdsat             -0.280022                  -1.3              -1.24574
+         rs                     0                     0                     0
+         rd                     0                     0                     0
+         gm           0.000136578           7.57096e-06           7.57096e-06
+        gds           2.51731e-06           0.000486745           0.000466113
+        gmb           2.29049e-05           1.26969e-06           1.26969e-06
+        cbd                     0                     0                     0
+        cbs                     0                     0                     0
+        cgs           8.89489e-16           7.30828e-16           7.30937e-16
+        cgd           2.44902e-16           7.25837e-16           7.25726e-16
+        cgb               5.6e-17               5.6e-17               5.6e-17
+       cbd0                     0                     0                     0
+     cbdsw0                     0                     0                     0
+       cbs0                     0                     0                     0
+     cbssw0                     0                     0                     0
+
+ Mos1: Level 1 MOSfet model with Meyer capacitance model
+     device   m.xx2.xinverter2.mp   m.xx2.xinverter1.mp              m.xi1.mp
+      model              pmos0p18              pmos0p18              pmos0p18
+         id           2.20399e-05              1.81e-12              1.81e-12
+         is          -2.20399e-05             -1.81e-12                     0
+         ig                     0                     0                     0
+         ib          -1.75574e-12          -5.11165e-21             -1.81e-12
+        vgs                   0.8                   1.8           2.32628e-08
+        vds               1.74574            3.6864e-09                   1.8
+        vbs                    -0                    -0                    -0
+        von                  -0.5                  -0.5                  -0.5
+      vdsat                  -0.3                  -1.3                    -0
+         rs                     0                     0                     0
+         rd                     0                     0                     0
+         gm           0.000146933           1.39231e-12                     0
+        gds           2.88931e-06           0.000490994                     0
+        gmb           2.46414e-05           2.33497e-13                     0
+        cbd                     0                     0                     0
+        cbs                     0                     0                     0
+        cgs           8.89489e-16           7.28342e-16           1.55036e-16
+        cgd           2.44902e-16           7.28342e-16           1.55036e-16
+        cgb               5.6e-17               5.6e-17           4.38554e-16
+       cbd0                     0                     0                     0
+     cbdsw0                     0                     0                     0
+       cbs0                     0                     0                     0
+     cbssw0                     0                     0                     0
+
+ Mos1: Level 1 MOSfet model with Meyer capacitance model
+     device             m.xx1.mp4             m.xx1.mp3             m.xx1.mp2
+      model              pmos0p18              pmos0p18              pmos0p18
+         id            2.1921e-12           5.27902e-13           5.27902e-13
+         is           -2.1921e-12          -5.27902e-13          -5.27902e-13
+         ig                     0                     0                     0
+         ib          -1.61284e-20          -1.61284e-20          -1.61284e-20
+        vgs               1.74574                   0.8                   0.8
+        vds           1.16314e-08           1.16314e-08           1.16314e-08
+        vbs                    -0                    -0                    -0
+        von                  -0.5                  -0.5                  -0.5
+      vdsat              -1.24574                  -0.3                  -0.3
+         rs                     0                     0                     0
+         rd                     0                     0                     0
+         gm           1.75967e-12           1.75967e-12           1.75967e-12
+        gds           0.000188464            4.5386e-05            4.5386e-05
+        gmb           2.95106e-13           2.95106e-13           2.95106e-13
+        cbd                     0                     0                     0
+        cbs                     0                     0                     0
+        cgs           2.91745e-16           2.91745e-16           2.91745e-16
+        cgd           2.91745e-16           2.91745e-16           2.91745e-16
+        cgb               5.6e-17               5.6e-17               5.6e-17
+       cbd0                     0                     0                     0
+     cbdsw0                     0                     0                     0
+       cbs0                     0                     0                     0
+     cbssw0                     0                     0                     0
+
+ Mos1: Level 1 MOSfet model with Meyer capacitance model
+     device             m.xx1.mp1   m.xx1.xinverter2.mp   m.xx1.xinverter1.mp
+      model              pmos0p18              pmos0p18              pmos0p18
+         id            2.1921e-12           8.82832e-06           8.82832e-06
+         is           -2.1921e-12          -8.82832e-06          -8.82832e-06
+         ig                     0                     0                     0
+         ib          -1.61284e-20          -1.75574e-12          -1.75574e-12
+        vgs               1.74574                   0.8                   0.8
+        vds           1.16314e-08               1.74574               1.74574
+        vbs                    -0                    -0                    -0
+        von                  -0.5                  -0.5                  -0.5
+      vdsat              -1.24574                  -0.3                  -0.3
+         rs                     0                     0                     0
+         rd                     0                     0                     0
+         gm           1.75967e-12           5.88555e-05           5.88555e-05
+        gds           0.000188464           1.15734e-06           1.15734e-06
+        gmb           2.95106e-13           9.87036e-06           9.87036e-06
+        cbd                     0                     0                     0
+        cbs                     0                     0                     0
+        cgs           2.91745e-16           3.56294e-16           3.56294e-16
+        cgd           2.91745e-16            9.8098e-17            9.8098e-17
+        cgb               5.6e-17               5.6e-17               5.6e-17
+       cbd0                     0                     0                     0
+     cbdsw0                     0                     0                     0
+       cbs0                     0                     0                     0
+     cbssw0                     0                     0                     0
+
+ Vsource: Independent voltage source
+     device                   vci                    vb                    va
+         dc                     1                     1                     1
+      acmag                     0                     0                     0
+      pulse         -         -         -
+        sin         -         -         -
+        exp         -         -         -
+        pwl         -         -         -
+       sffm         -         -         -
+         am         -         -         -
+    trnoise         -         -         -
+   trrandom         -         -         -
+    portnum                     0                     0                     0
+         z0                     0                     0                     0
+        pwr                     0                     0                     0
+       freq                     0                     0                     0
+      phase                     0                     0                     0
+          i                     0                     0                     0
+          p                     0                     0                     0
+
+ Vsource: Independent voltage source
+     device                   vdd
+         dc                   1.8
+      acmag                     0
+      pulse         -
+        sin         -
+        exp         -
+        pwl         -
+       sffm         -
+         am         -
+    trnoise         -
+   trrandom         -
+    portnum                     0
+         z0                     0
+        pwr                     0
+       freq                     0
+      phase                     0
+          i          -8.59404e-05
+          p          -0.000154693
+
+Error: .print: no dc analysis found.
+
+Total analysis time (seconds) = 0.000683
+
+Total elapsed time (seconds) = 0.005 
+
+Total DRAM available = 24576.000 MB.
+DRAM currently available =  347.016 MB.
+Maximum ngspice program size =    6.906 MB.
+Current ngspice program size =    6.906 MB.
+
