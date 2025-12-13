@@ -1,0 +1,116 @@
+LTspice 24.1.10 for Windows
+Circuit: C:\Users\jacqu\Documents\spice-full-adder\full_adder_opt.cir
+Start Time: Sat Dec 13 15:55:39 2025
+solver = Normal
+Maximum thread count: 20
+tnom = 27
+temp = 27
+method = trap
+Model "pmos0p18": Oxide thickness thinner than recommended for a level 1 MOSFET.
+Instance "xx1:xinverter1:MP": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx1:xinverter1:MP": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx1:xinverter2:MP": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx1:xinverter2:MP": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx1:MP1": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx1:MP1": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx1:MP2": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx1:MP2": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx1:MP3": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx1:MP3": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx1:MP4": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx1:MP4": Width narrower than recommended for a level 1 MOSFET.
+Instance "xi1:MP": Length shorter than recommended for a level 1 MOSFET.
+Instance "xi1:MP": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx2:xinverter1:MP": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx2:xinverter1:MP": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx2:xinverter2:MP": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx2:xinverter2:MP": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx2:MP1": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx2:MP1": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx2:MP2": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx2:MP2": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx2:MP3": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx2:MP3": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx2:MP4": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx2:MP4": Width narrower than recommended for a level 1 MOSFET.
+Instance "xi2:MP": Length shorter than recommended for a level 1 MOSFET.
+Instance "xi2:MP": Width narrower than recommended for a level 1 MOSFET.
+Instance "xna1:MP1": Length shorter than recommended for a level 1 MOSFET.
+Instance "xna1:MP1": Width narrower than recommended for a level 1 MOSFET.
+Instance "xna1:MP2": Length shorter than recommended for a level 1 MOSFET.
+Instance "xna1:MP2": Width narrower than recommended for a level 1 MOSFET.
+Instance "xia1:MP": Length shorter than recommended for a level 1 MOSFET.
+Instance "xia1:MP": Width narrower than recommended for a level 1 MOSFET.
+Instance "xna2:MP1": Length shorter than recommended for a level 1 MOSFET.
+Instance "xna2:MP1": Width narrower than recommended for a level 1 MOSFET.
+Instance "xna2:MP2": Length shorter than recommended for a level 1 MOSFET.
+Instance "xna2:MP2": Width narrower than recommended for a level 1 MOSFET.
+Instance "xia2:MP": Length shorter than recommended for a level 1 MOSFET.
+Instance "xia2:MP": Width narrower than recommended for a level 1 MOSFET.
+Instance "xno:MP1": Length shorter than recommended for a level 1 MOSFET.
+Instance "xno:MP1": Width narrower than recommended for a level 1 MOSFET.
+Instance "xno:MP2": Length shorter than recommended for a level 1 MOSFET.
+Instance "xno:MP2": Width narrower than recommended for a level 1 MOSFET.
+Instance "xio:MP": Length shorter than recommended for a level 1 MOSFET.
+Instance "xio:MP": Width narrower than recommended for a level 1 MOSFET.
+Model "nmos0p18": Oxide thickness thinner than recommended for a level 1 MOSFET.
+Instance "xx1:xinverter1:MN": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx1:xinverter1:MN": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx1:xinverter2:MN": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx1:xinverter2:MN": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx1:MN1": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx1:MN1": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx1:MN2": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx1:MN2": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx1:MN3": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx1:MN3": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx1:MN4": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx1:MN4": Width narrower than recommended for a level 1 MOSFET.
+Instance "xi1:MN": Length shorter than recommended for a level 1 MOSFET.
+Instance "xi1:MN": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx2:xinverter1:MN": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx2:xinverter1:MN": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx2:xinverter2:MN": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx2:xinverter2:MN": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx2:MN1": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx2:MN1": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx2:MN2": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx2:MN2": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx2:MN3": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx2:MN3": Width narrower than recommended for a level 1 MOSFET.
+Instance "xx2:MN4": Length shorter than recommended for a level 1 MOSFET.
+Instance "xx2:MN4": Width narrower than recommended for a level 1 MOSFET.
+Instance "xi2:MN": Length shorter than recommended for a level 1 MOSFET.
+Instance "xi2:MN": Width narrower than recommended for a level 1 MOSFET.
+Instance "xna1:MN1": Length shorter than recommended for a level 1 MOSFET.
+Instance "xna1:MN1": Width narrower than recommended for a level 1 MOSFET.
+Instance "xna1:MN2": Length shorter than recommended for a level 1 MOSFET.
+Instance "xna1:MN2": Width narrower than recommended for a level 1 MOSFET.
+Instance "xia1:MN": Length shorter than recommended for a level 1 MOSFET.
+Instance "xia1:MN": Width narrower than recommended for a level 1 MOSFET.
+Instance "xna2:MN1": Length shorter than recommended for a level 1 MOSFET.
+Instance "xna2:MN1": Width narrower than recommended for a level 1 MOSFET.
+Instance "xna2:MN2": Length shorter than recommended for a level 1 MOSFET.
+Instance "xna2:MN2": Width narrower than recommended for a level 1 MOSFET.
+Instance "xia2:MN": Length shorter than recommended for a level 1 MOSFET.
+Instance "xia2:MN": Width narrower than recommended for a level 1 MOSFET.
+Instance "xno:MN1": Length shorter than recommended for a level 1 MOSFET.
+Instance "xno:MN1": Width narrower than recommended for a level 1 MOSFET.
+Instance "xno:MN2": Length shorter than recommended for a level 1 MOSFET.
+Instance "xno:MN2": Width narrower than recommended for a level 1 MOSFET.
+Instance "xio:MN": Length shorter than recommended for a level 1 MOSFET.
+Instance "xio:MN": Width narrower than recommended for a level 1 MOSFET.
+Per .tran options, skipping operating point for transient analysis.
+Total elapsed time: 0.733 seconds.
+
+Files loaded:
+C:\Users\jacqu\Documents\spice-full-adder\full_adder_opt.cir
+C:\Users\jacqu\Documents\spice-full-adder\MOSFET_models_0p5_0p18-3.inc
+C:\Users\jacqu\Documents\spice-full-adder\subcircuits.cir
+
+tplh_s=-1.00049933569e-09 FROM 1.00050000001e-09 TO 6.64321502429e-16
+tphl_s=-1.00042495761e-09 FROM 1.00050000001e-09 TO 7.50424028943e-14
+tplh_c=-1.00049942361e-09 FROM 1.00050000001e-09 TO 5.76405092657e-16
+tphl_c=-1.00033555088e-09 FROM 1.00050000001e-09 TO 1.64449129034e-13
+etotal: INTEG(V(vdd)*I(VDD))=-6.86134297059e-12 FROM 0 TO 8e-08
+pavg: 'Etotal/80n'=-8.57667871324e-05
