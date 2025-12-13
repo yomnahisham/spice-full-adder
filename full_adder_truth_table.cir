@@ -3,7 +3,7 @@
 .include ./subcircuits.cir
 
 * Full adder truth table via DC operating point; step A,B,Ci over {0,1}
-VDD p_s 0 DC 1.8
+VDD vdd 0 DC 1.8
 
 * DC inputs (driven by stepped params)
 .param A=0 B=0 Ci=0
@@ -12,20 +12,20 @@ VB B 0 DC {B}
 VCi Ci 0 DC {Ci}
 
 * Instantiate same gates and sizing as in full_adder_opt.cir
-XX1 p_s A B x1 0 XNOR Wn=0.143u Wp=0.286u
-XI1 p_s x1 x1_inv 0 INVERTER Wn=0.226u Wp=0.452u
-XX2 p_s x1_inv Ci x2 0 XNOR Wn=0.357u Wp=0.714u
-XI2 p_s x2 S 0 INVERTER Wn=0.567u Wp=1.134u
+XX1 vdd A B xnor1 0 XNOR Wn=0.143u Wp=0.286u
+XI1 vdd xnor1 xor1 0 INVERTER Wn=0.226u Wp=0.452u
+XX2 vdd xor1 Ci xnor2 0 XNOR Wn=0.357u Wp=0.714u
+XI2 vdd xnor2 S 0 INVERTER Wn=0.567u Wp=1.134u
 
-XNA1 p_s A B nab 0 NAND Wn=0.226u Wp=0.452u
-XIA1 p_s nab ab 0 INVERTER Wn=0.357u Wp=0.714u
-XNA2 p_s x1_inv Ci ncix 0 NAND Wn=0.226u Wp=0.452u
-XIA2 p_s ncix cix 0 INVERTER Wn=0.357u Wp=0.714u
-XNO p_s ab cix nor_out 0 NOR Wn=0.567u Wp=1.134u
-XIO p_s nor_out Co 0 INVERTER Wn=0.9u Wp=1.8u
+XNA1 vdd A B nab 0 NAND Wn=0.226u Wp=0.452u
+XIA1 vdd nab ab 0 INVERTER Wn=0.357u Wp=0.714u
+XNA2 vdd xor1 Ci nci_xor1 0 NAND Wn=0.226u Wp=0.452u
+XIA2 vdd nci_xor1 ci_xor1 0 INVERTER Wn=0.357u Wp=0.714u
+XNO vdd ab ci_xor1 nor_out 0 NOR Wn=0.567u Wp=1.134u
+XIO vdd nor_out Co 0 INVERTER Wn=0.9u Wp=1.8u
 
-* Load nodes to match earlier
-RloadS s S_load 1k
+* Loads to match full_adder_opt.cir
+RloadS S S_load 1k
 CloadS S_load 0 0.2p
 RloadCo Co Co_load 1k
 CloadCo Co_load 0 0.2p

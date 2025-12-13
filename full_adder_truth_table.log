@@ -2,7 +2,7 @@
 Note: No compatibility mode selected!
 
 
-Circuit: *include ./MOSFET_models_0p5_0p18-3.inc
+Circuit: 
 
 Warning: Model issue on line 23 :
   .model pmos0p18 pmos(level=1 vto=-0.5 gamma=0.3 phi=0.8 ld=10e-09 wd=0 u ...
