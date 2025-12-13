@@ -10,7 +10,7 @@
 * NMOS widths (u): 0.143u, 0.226u, 0.357u, 0.567u, 0.900u
 * PMOS widths = 2 * NMOS widths
 
-VDD vdd 0 DC 1.8
+VDD p_s 0 DC 1.8
 
 * Inputs: A, B, Ci
 * We'll generate a sequence of input combinations by choosing different pulse phases
@@ -22,57 +22,65 @@ VCi Ci 0 PULSE(0 1.8 4n 1p 1p 10n 20n)
 
 * Internal nodes
 
-* Stage mapping for Sum path (5 stages):
+* Stage mapping for Sum path (6 stages):
 * G1 = XNOR(A,B)  -> sizes s1
 * G2 = INVERTER     -> sizes s2
 * G3 = XNOR(X, Ci) -> sizes s3
 * G4 = INVERTER     -> sizes s4
 * G5 = INVERTER (output buffer) -> sizes s5
+* G6 = INVERTER (corrects buffer inversion) -> sizes s5
 
 * Instantiate gates with params Wn and Wp
 
 * G1: XNOR(A,B)  (small)
-XX1 vdd A B xnor1 0 XNOR Wn=0.143u Wp=0.286u
+XX1 p_s A B x1 0 XNOR Wn=0.143u Wp=0.286u
 * G2: INV
-XI1 vdd xnor1 xor1 0 INVERTER Wn=0.226u Wp=0.452u
-* G3: XNOR(xor1, Ci)
-XX2 vdd xor1 Ci xnor2 0 XNOR Wn=0.357u Wp=0.714u
+XI1 p_s x1 x1_inv 0 INVERTER Wn=0.226u Wp=0.452u
+* G3: XNOR(x1_inv, Ci)
+XX2 p_s x1_inv Ci x2 0 XNOR Wn=0.357u Wp=0.714u
 * G4: INV
-XI2 vdd xnor2 S 0 INVERTER Wn=0.567u Wp=1.134u
-
-*EXTRA INVERSION NOT NEEDED
+XI2 p_s x2 x2_inv 0 INVERTER Wn=0.567u Wp=1.134u
 * G5: OUT buffer INV
-*XI3 vdd xor2 S 0 INVERTER Wn=0.9u Wp=1.8u
+XI3 p_s x2_inv S_buf 0 INVERTER Wn=0.9u Wp=1.8u
+* G6: Final output INV (corrects inversion from buffer)
+XI4 p_s S_buf S 0 INVERTER Wn=0.9u Wp=1.8u
 
 * Carry path: compute AB and Ci&X then OR
 * AB = A & B -> NAND then INV
-XNA1 vdd A B nab 0 NAND Wn=0.226u Wp=0.452u
-XIA1 vdd nab ab 0 INVERTER Wn=0.357u Wp=0.714u
-* CiX = Ci & XOR1 (use XOR1 = xor1)
-XNA2 vdd xor1 Ci nci_xor1 0 NAND Wn=0.226u Wp=0.452u
-XIA2 vdd nci_xor1 ci_xor1 0 INVERTER Wn=0.357u Wp=0.714u
-* OR of ab and ci_xor1 -> NOR then INV
-XNO vdd ab ci_xor1 nor_out 0 NOR Wn=0.567u Wp=1.134u
-XIO vdd nor_out Co 0 INVERTER Wn=0.9u Wp=1.8u
+XNA1 p_s A B nab 0 NAND Wn=0.226u Wp=0.452u
+XIA1 p_s nab ab 0 INVERTER Wn=0.357u Wp=0.714u
+* CiX = Ci & X (use X = x1_inv)
+XNA2 p_s x1_inv Ci ncix 0 NAND Wn=0.226u Wp=0.452u
+XIA2 p_s ncix cix 0 INVERTER Wn=0.357u Wp=0.714u
+* OR of ab and cix -> NOR then INV
+XNO p_s ab cix nor_out 0 NOR Wn=0.567u Wp=1.134u
+XIO p_s nor_out Co 0 INVERTER Wn=0.9u Wp=1.8u
 
 * Loads: put small capacitive loads and 1k series as in earlier parts
-RloadS s S_load 1k
+RloadS S S_load 1k
 CloadS S_load 0 0.2p
 RloadCo Co Co_load 1k
 CloadCo Co_load 0 0.2p
 
-* Measurements: measure delays for a chosen transition (A rising), and energy
-* We'll measure over one period (80n)
+* Measurements: measure delays for transitions that actually occur
+* Full adder truth table transitions:
+* t=1ns: A rises, (0,0,0)->(1,0,0) -> S: 0->1 (rises) ✓
+* t=2ns: B rises, (1,0,0)->(1,1,0) -> S: 1->0 (falls) ✓, Co: 0->1 (rises) ✓
+* t=4ns: Ci rises, (1,1,0)->(1,1,1) -> S: 0->1 (rises)
+* t=14ns: Ci falls, (1,1,1)->(1,1,0) -> S: 1->0 (falls) ✓
+* t=22ns: B falls, (1,1,0)->(1,0,0) -> Co: 1->0 (falls) ✓
+* All measurements use proper time constraints to avoid initial glitches
 .meas tran tPLH_S TRIG V(A) VAL=0.9 RISE=1 TARG V(S) VAL=0.9 RISE=1
-.meas tran tPHL_S TRIG V(A) VAL=0.9 RISE=1 TARG V(S) VAL=0.9 FALL=1
-.meas tran tPLH_C TRIG V(A) VAL=0.9 RISE=1 TARG V(Co) VAL=0.9 RISE=1
-.meas tran tPHL_C TRIG V(A) VAL=0.9 RISE=1 TARG V(Co) VAL=0.9 FALL=1
+.meas tran tPHL_S TRIG V(Ci) VAL=0.9 FALL=1 TARG V(S) VAL=0.9 FALL=1 TD=13n
+.meas tran tPLH_C TRIG V(B) VAL=0.9 RISE=1 TARG V(Co) VAL=0.9 RISE=1
+.meas tran tPHL_C TRIG V(B) VAL=0.9 FALL=1 TARG V(Co) VAL=0.9 FALL=1
 
-* Energy on VDD integrated over 0 -> 80n
-.meas tran Etotal INTEG V(vdd)*I(VDD) FROM=0 TO=80n
+* Energy on VDD: flip sign for SPICE convention (current into positive terminal = negative)
+* Etotal is now positive (energy consumed in Joules)
+.meas tran Etotal INTEG -V(p_s)*I(VDD) FROM=0 TO=80n
 .meas tran Pavg PARAM='Etotal/80n'
 
-.tran 85n uic
+.tran 85n
 
 .plot v(S) v(Co) v(A) v(B) v(Ci) -I(VDD)
 
